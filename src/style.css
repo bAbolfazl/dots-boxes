@@ -1,0 +1,112 @@
+html {
+  transition: background-color 0.6s;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family: "Courier New", Courier, monospace;
+}
+.container {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.horizontal_line {
+  width: 60px;
+  height: 8px;
+  background-color: #f4f4f4;
+}
+.vertical_lines_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vertical_line {
+  width: 8px;
+  height: 60px;
+  background-color: #f4f4f4;
+  position: relative;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border: 3px solid #808080;
+  border-radius: 50%;
+  position: absolute;
+  left: -1px;
+  top: -9px;
+  z-index: 2;
+  background-color: #808080;
+}
+.bottom_dot {
+  bottom: -9px;
+  width: 4px;
+  height: 4px;
+  border: 3px solid #808080;
+  border-radius: 50%;
+  position: absolute;
+  left: -1px;
+  z-index: 2;
+  background-color: #808080;
+}
+
+.row:nth-child(12) .vertical_line {
+  background-color: transparent !important;
+}
+
+.blue {
+  background-color: #87ceeb !important;
+}
+
+.red {
+  background-color: #fa8072 !important;
+}
+.text--blue {
+  color: #87ceeb;
+  font-weight: bold;
+}
+
+.text--red {
+  color: #fa8072;
+  font-weight: bold;
+}
+
+.game_status {
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: -30px;
+}
+
+.bg--blue {
+  background-color: #87ceeb7a;
+}
+.bg--red {
+  background-color: #fa807285;
+}
+
+.filled-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 67px;
+  height: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
