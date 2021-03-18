@@ -194,8 +194,30 @@ const myFunction = () => {
     const handle_finish = () => {
         let winner = STATE.blueScore > STATE.redScore ? TURN.blue : TURN.red
         if (STATE.blueScore === STATE.redScore) winner = 'no one'
-        alert(`${winner} is the winner`)
-        location.reload()
+
+        // make confetti for winner and song for that 
+        const confettiElement = document.getElementById('confetti')
+        confettiElement.style.display = 'block'
+        const confettiSettings = { target: confettiElement, max: 120 }
+        const confetti = new ConfettiGenerator(confettiSettings)
+        confetti.render()
+
+        const audio = new Audio()
+        audio.src = './music.wav'
+        audio.loop = true
+        audio.play()
+
+
+        setTimeout(() => {
+            confetti.clear()
+            audio.pause()
+            const confirm = window.confirm(`${winner} is the winner.`)
+
+            if (confirm) {
+                window.location.reload()
+            }
+        }, 5000)
+
     }
 
     const on_lines_hover = (e) => {
@@ -255,3 +277,5 @@ const myFunction = () => {
 }
 
 window.addEventListener('load', myFunction)
+
+
