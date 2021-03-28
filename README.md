@@ -1,3 +1,3 @@
 Demo: http://dots-boxes.surge.sh
 
-dots and boxes game
+Dots and boxes game with vanilla JS
