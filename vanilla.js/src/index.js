@@ -44,15 +44,6 @@ const myFunction = () => {
         const plus15 = linesArray.find(line => Number(line.dataset.index) === Number(index + 15))
         const mines15 = linesArray.find(line => Number(line.dataset.index) === Number(index - 15))
 
-        // const oneIsBlue = isColor(one, 'blue')
-        // const twoIsBlue = isColor(two, 'blue')
-        // const threeIsBlue = isColor(three, 'blue')
-        // const fourIsBlue = isColor(four, 'blue')
-        // const fiveIsBlue = isColor(five, 'blue')
-        // const sixIsBlue = isColor(six, 'blue')
-        // const sevenIsBlue = isColor(seven, 'blue')
-        // const eightIsBlue = isColor(eight, 'blue')
-
         const mines7IsSelected = mines7 && mines7.classList.contains('selected')
         const plus7IsSelected = plus7 && plus7.classList.contains('selected')
         const mines8IsSelected = mines8 && mines8.classList.contains('selected')
@@ -82,52 +73,6 @@ const myFunction = () => {
 
         }
 
-        // console.log(xxx)
-        // else {
-        //     const one = linesArray.find(line => Number(line.dataset.index) === Number(index + 7))
-        //     const two = linesArray.find(line => Number(line.dataset.index) === Number(index - 7))
-        //     const three = linesArray.find(line => Number(line.dataset.index) === Number(index + 8))
-        //     const four = linesArray.find(line => Number(line.dataset.index) === Number(index - 8))
-        //     // for horizontal
-        //     const five = linesArray.find(line => Number(line.dataset.index) === Number(index + 1))
-        //     const six = linesArray.find(line => Number(line.dataset.index) === Number(index - 1))
-        //     // for vertical
-        //     const seven = linesArray.find(line => Number(line.dataset.index) === Number(index + 15))
-        //     const eight = linesArray.find(line => Number(line.dataset.index) === Number(index - 15))
-
-        //     const oneIsRed = isColor(one, 'red')
-        //     const twoIsRed = isColor(two, 'red')
-        //     const threeIsRed = isColor(three, 'red')
-        //     const fourIsRed = isColor(four, 'red')
-        //     const fiveIsRed = isColor(five, 'red')
-        //     const sixIsRed = isColor(six, 'red')
-        //     const sevenIsRed = isColor(seven, 'red')
-        //     const eightIsRed = isColor(eight, 'red')
-        //     // debugger
-        //     if (
-        //         (target.classList.contains('horizontal_line')) &&
-        //         (
-        //             (oneIsRed && threeIsRed && sevenIsRed) ||
-        //             (twoIsRed && fourIsRed && eightIsRed)
-        //         )
-        //     ) {
-        //         handle_score(TURN.red)
-
-        //     } else if (
-        //         (target.classList.contains('vertical_line')) &&
-        //         (
-        //             (fiveIsRed && threeIsRed && twoIsRed) ||
-        //             (fourIsRed && oneIsRed && sixIsRed)
-        //         )
-        //     ) {
-        //         handle_score(TURN.red)
-
-        //     }
-
-        //     // console.log(xxx)
-        // }
-
-        // console.log(isBlue)
     }
     const getPosition = (index, position) => {
         if (position === 2) {
@@ -142,25 +87,9 @@ const myFunction = () => {
         if (thisColor === TURN.red) { ++STATE.redScore; STATE.turn = TURN.red }
         else { ++STATE.blueScore; STATE.turn = TURN.blue }
 
-        // const newElement = `
-        //     <div class="filled-box" style="${getPosition(index, position)}">
-        //         w
-        //     </div>
-        // `
-        // document.querySelector('.container').innerHTML += (newElement)
-
         handle_scoreBoard(thisColor)
     }
-    // const handle_background = () => {
-    //     if (STATE.turn === TURN.blue) {
-    //         htmlElement.classList.remove('bg--blue')
-    //         htmlElement.classList.add('bg--red')
-    //     } else {
-
-    //         htmlElement.classList.add('bg--blue')
-    //         htmlElement.classList.remove('bg--red')
-    //     }
-    // }
+   
     const handle_scoreBoard = (color) => {
         if (color === TURN.red) redScore.innerText = STATE.redScore
         else blueScore.innerText = STATE.blueScore
